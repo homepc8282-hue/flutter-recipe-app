@@ -32,7 +32,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   void initState() {
     super.initState();
-    // Stream one time initialize (memory leak fix)
+
     userRecipeStream = _fireStore
         .collection("recipes")
         .where("userId", isEqualTo: userId)
@@ -41,7 +41,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   @override
   void dispose() {
-    // Sab controllers dispose karo (out of memory error fix)
     recipeNameCtrl.dispose();
     categoryCtrl.dispose();
     imageUrlCtrl.dispose();
@@ -101,7 +100,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       }
 
       if (mounted) {
-        Navigator.pop(context); // Dialog force close fix
+        Navigator.pop(context);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
               content: Text(docId == null

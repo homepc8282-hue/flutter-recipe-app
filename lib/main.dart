@@ -10,7 +10,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Direct firebase initialize karo yeh firebase_setup wali file hatado
+
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
@@ -46,7 +46,6 @@ class AuthWrapper extends StatelessWidget {
                 Center(child: CircularProgressIndicator(color: Colors.orange)),
           );
         }
-        // Login hai tu MainScreen warna LoginScreen
         if (snapshot.hasData) {
           return const MainScreen();
         } else {

@@ -31,14 +31,12 @@ class CountryDishes extends StatelessWidget {
             itemCount: snapshot.data!.docs.length,
             itemBuilder: (context, index) {
               final doc = snapshot.data!.docs[index];
-              // ✅ `fromMap` ki jagah `fromFirestore` use karo
+
               final recipe = RecipeModel.fromFirestore(doc);
 
               return DishCard(
                 recipe: recipe,
-                onTap: () {
-                  // Recipe Detail Screen par navigate karo
-                },
+                onTap: () {},
               );
             },
           );

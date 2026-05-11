@@ -135,7 +135,6 @@ class _SearchScreenState extends State<SearchScreen> {
 
                   const SizedBox(height: 25),
 
-                  // Jab search empty ho, to ye widgets dikhenge
                   if (_searchController.text.isEmpty) ...[
                     // ⭐ Top Liked Recipes
                     const Text(
@@ -194,7 +193,6 @@ class _SearchScreenState extends State<SearchScreen> {
 
                   const SizedBox(height: 30),
 
-                  // Jab search active ho, to sirf ye dikhe
                   if (_searchController.text.isNotEmpty)
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
